@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Macro Log</title>
+<meta name="theme-color" content="#1F4E8C">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmRlZWE3ZjNmLWU1ZTYtNDdhMy1iOWE4LTgwYzQ1OTUwMjU2NQAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNory1dLFVBc++/UgDt1w6rcQAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6NjE2MTViN2MtYzcyMC00YTFlLTg1NGQtZGFhNWIxMjhiMGZjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaFO/yRXLoBIAliBCYGW9EnwAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIHEN4lo9yUsVXFc4Thg6iqplOwqRT1IqFR5gm8Migf+1pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2g1stYUZAhnMTSPtSZ4UgY6AAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggzwbNbRg4w2d993MW6BcWG5Mp5at+/cSC+LncYcmob91kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTpkZWVhN2YzZi1lNWU2LTQ3YTMtYjlhOC04MGM0NTk1MDI1NjUvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDpiNWFjNDY1Mi1iYWRjLTRjMmYtODA2Yy1iNjJkYTBiMDU1ODFyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggcQ3iWj3JSxVcVzhOGDqKqmU7CpFPUioVHmCbwyKB/7WiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIOhXhjjafapiQqBaMCk3W/jsvzQZ8FgnkUUQbcnsPH/4omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIHZcsMAQj3Ul3Sg9tOZFCXuMmGOukXYxvPbYhVuGVSmWdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmRlZWE3ZjNmLWU1ZTYtNDdhMy1iOWE4LTgwYzQ1OTUwMjU2NQAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNory1dLFVBc++/UgDt1w6rcQAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6NjE2MTViN2MtYzcyMC00YTFlLTg1NGQtZGFhNWIxMjhiMGZjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaFO/yRXLoBIAliBCYGW9EnwAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIHEN4lo9yUsVXFc4Thg6iqplOwqRT1IqFR5gm8Migf+1pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2g1stYUZAhnMTSPtSZ4UgY6AAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggzwbNbRg4w2d993MW6BcWG5Mp5at+/cSC+LncYcmob91kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTpkZWVhN2YzZi1lNWU2LTQ3YTMtYjlhOC04MGM0NTk1MDI1NjUvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDpiNWFjNDY1Mi1iYWRjLTRjMmYtODA2Yy1iNjJkYTBiMDU1ODFyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggcQ3iWj3JSxVcVzhOGDqKqmU7CpFPUioVHmCbwyKB/7WiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIOhXhjjafapiQqBaMCk3W/jsvzQZ8FgnkUUQbcnsPH/4omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIHZcsMAQj3Ul3Sg9tOZFCXuMmGOukXYxvPbYhVuGVSmWdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0EC; --surface:#FFFFFF; --sunk:#E3E8E3; --ink:#18242A; --muted:#56656C; --line:#D2D9D4;
+  --accent:#1F4E8C; --accent-ink:#FFFFFF; --p:#0E7A6B; --c:#A87308; --f:#B0426A; --k:#18242A;
+  --good:#1D7A3D; --warn:#9A4D00; --bad:#B3261E;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11191D; --surface:#19232A; --sunk:#202D34; --ink:#E5ECE8; --muted:#9AA9A5; --line:#2C3B42;
+    --accent:#86B4F2; --accent-ink:#0D1A2A; --p:#43C3AB; --c:#E2B34A; --f:#EB86AA; --k:#E5ECE8;
+    --good:#6CCF8A; --warn:#F2A75D; --bad:#FF8B82;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11191D; --surface:#19232A; --sunk:#202D34; --ink:#E5ECE8; --muted:#9AA9A5; --line:#2C3B42;
+  --accent:#86B4F2; --accent-ink:#0D1A2A; --p:#43C3AB; --c:#E2B34A; --f:#EB86AA; --k:#E5ECE8;
+  --good:#6CCF8A; --warn:#F2A75D; --bad:#FF8B82;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.45 Barlow,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.num,h1,h2,.big{font-family:"Barlow Condensed","Arial Narrow","Roboto Condensed",Barlow,sans-serif}
+main{max-width:620px;margin:0 auto;padding:12px 14px calc(96px + env(safe-area-inset-bottom,0px))}
+h1{font-size:28px;font-weight:700;margin:6px 0 2px;letter-spacing:.2px}
+h2{font-size:21px;font-weight:600;margin:0 0 10px}
+p{margin:0 0 10px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.btn{border:0;border-radius:10px;padding:10px 16px;font-weight:600;background:var(--accent);color:var(--accent-ink);min-height:44px}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.btn.quiet{background:var(--sunk);color:var(--ink)}
+.btn.danger{background:transparent;color:var(--bad);border:1.5px solid var(--bad)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.grow{flex:1 1 auto}
+label.f{display:block;font-size:14px;color:var(--muted);margin:8px 0 4px}
+input[type=text],input[type=number],input[type=date],input[type=search],select,textarea{
+  width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
+
+/* date bar */
+.datebar{display:flex;align-items:center;gap:6px;margin:4px 0 8px}
+.datebar .d{flex:1;text-align:center}
+.datebar .d .big{font-size:26px;font-weight:700;line-height:1.1}
+.iconbtn{width:44px;height:44px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:22px;line-height:1}
+.linkbtn{background:none;border:0;color:var(--accent);font-weight:600;padding:6px 4px;min-height:36px}
+
+/* the meter */
+.meter{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px 6px}
+.mrow{padding:6px 0 10px}
+.mrow+.mrow{border-top:1px solid var(--line)}
+.mhead{display:flex;align-items:baseline;gap:8px}
+.mname{font-weight:600;width:72px;flex:none}
+.mval{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:30px;font-weight:700;line-height:1}
+.mval small{font-size:18px;font-weight:500;color:var(--muted)}
+.mstat{margin-left:auto;font-size:14px;color:var(--muted);text-align:right}
+.mstat.good{color:var(--good)} .mstat.warn{color:var(--warn)}
+.track{position:relative;height:12px;background:var(--sunk);border-radius:6px;margin-top:8px;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;border-radius:6px}
+.over{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(135deg,transparent 0 4px,rgba(0,0,0,.28) 4px 7px)}
+.notarget{font-size:14px;color:var(--muted);margin:6px 0 4px}
+
+/* items */
+.foodtext{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:15px;white-space:pre-wrap}
+.item{border-top:1px solid var(--line);padding:10px 0}
+.item:first-child{border-top:0}
+.ihead{display:flex;gap:8px;align-items:flex-start}
+.iname{font-weight:600}
+.tag{display:inline-block;font-size:12px;font-weight:600;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.tag.lib{background:color-mix(in srgb,var(--p) 16%,transparent);color:var(--p)}
+.tag.est{background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--c)}
+.tag.imp{background:var(--sunk);color:var(--muted)}
+.tag.bad{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
+.tag.chk{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.isrc{font-size:13px;color:var(--muted);margin-top:2px}
+.inums{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:8px;font-size:15px}
+.inums input{width:84px;min-height:38px;padding:6px 8px}
+.inums .mac input{width:66px}
+.mac{display:inline-flex;align-items:center;gap:4px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.xbtn{margin-left:auto;background:none;border:0;color:var(--muted);font-size:14px;padding:6px;min-height:36px}
+.totline{display:flex;gap:14px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:10px;margin-top:6px;font-weight:600}
+.notice{background:var(--sunk);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:15px}
+.notice.err{background:color-mix(in srgb,var(--bad) 13%,var(--surface));color:var(--ink)}
+.addpanel{background:var(--bg);border-radius:12px;padding:10px;margin-top:10px}
+.res{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.res:first-child{border-top:0}
+.res input{width:80px;min-height:38px;padding:6px 8px}
+
+/* segmented */
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:8px 14px;min-height:40px}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.lasttime{background:var(--bg);border-left:3px solid var(--accent);padding:8px 10px;border-radius:0 8px 8px 0;font-size:14px;margin-top:8px}
+
+/* save bar */
+.savebar{position:sticky;bottom:calc(60px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;padding:10px 0;background:linear-gradient(to top,var(--bg) 70%,transparent)}
+.savebar .btn{flex:1}
+.savebar[hidden]{display:none}
+
+/* nav */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav.tabs .in{display:flex;max-width:620px;width:100%}
+nav.tabs button{flex:1;background:none;border:0;padding:10px 4px 12px;min-height:58px;color:var(--muted);font-weight:600;font-size:15px;border-top:3px solid transparent}
+nav.tabs button[aria-current=page]{color:var(--accent);border-top-color:var(--accent)}
+
+/* history */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stat{background:var(--bg);border-radius:10px;padding:10px}
+.stat .big{font-size:26px;font-weight:700;line-height:1.1}
+.chartwrap{overflow-x:auto}
+.chart{width:100%;height:auto;display:block}
+.dayrow{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:10px 2px;min-height:52px}
+.dayrow .dd{width:116px;flex:none}
+.dayrow .dd b{display:block}
+.dayrow .nums{flex:1;font-size:15px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin:6px 0}
+
+/* foods */
+.frow{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:10px 2px;min-height:52px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 10px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 8px}
+.formula{font-size:14px;background:var(--bg);border-radius:10px;padding:10px 12px;line-height:1.6}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:20;padding:20px}
+.mbox{background:var(--surface);color:var(--ink);border-radius:14px;padding:16px;max-width:420px;width:100%}
+.btn.dangerfill{background:var(--bad);color:#fff}
+.loading{padding:40px 0;text-align:center;color:var(--muted)}
+@media (prefers-reduced-motion: no-preference){ .fill{transition:width .35s ease} }
+</style>
+</head>
+<body>
+<main id="view"><p class="loading">Loading your log…</p></main>
+<nav class="tabs" id="tabs" aria-label="Sections"><div class="in">
+  <button data-tab="log">Log</button>
+  <button data-tab="history">History</button>
+  <button data-tab="workouts">Workouts</button>
+  <button data-tab="foods">Foods</button>
+  <button data-tab="me">Me</button>
+</div></nav>
+
+<script>
+'use strict';
+/* ---------------- starter food library ----------------
+   unit + per = the amount the values are for. kcal null = 4P + 4C + 9F.
+   pieceG = grams for small / medium / big pieces (used to turn "1 big apple" into grams). */
+const DEFAULT_FOODS = [
+  {id:'oats',name:'Oats (your brand)',aliases:['oats'],unit:'g',per:50,p:13,c:26,f:3.6,kcal:null,src:'label',verify:true,note:'From your setup note: 13 g protein, 26 g carbs, 3.6 g fat per 50 g. Check the current pack.'},
+  {id:'whey',name:'Whey protein',aliases:['whey','whey protein','protein powder'],unit:'scoop',per:1,p:25,c:6,f:2,kcal:160,src:'label',verify:true,note:'From your Jan 2026 entry: 36 g scoop, 25 g protein, 160 kcal. Check the current tub.'},
+  {id:'milk-toned',name:'Milk, toned',aliases:['milk','boiled milk','toned milk'],unit:'ml',per:100,p:3.1,c:4.7,f:3.0,kcal:null,src:'reference',verify:true,note:'Typical toned milk (3% fat). If you use full cream, move the “boiled milk” alias to that entry.'},
+  {id:'milk-full',name:'Milk, full cream',aliases:['full cream milk'],unit:'ml',per:100,p:3.2,c:4.9,f:6.0,kcal:null,src:'reference',verify:false,note:'Typical full cream milk (6% fat).'},
+  {id:'chapati',name:'Chapati, wheat, medium',aliases:['chapati','chapatti','roti','poli'],unit:'piece',per:1,p:3.1,c:18,f:2,kcal:null,src:'estimate',verify:false,note:'About 40 g cooked, a little oil, no ghee.'},
+  {id:'rice',name:'Rice, cooked (white)',aliases:['rice','cooked rice','bhat'],unit:'g',per:100,p:2.7,c:28.2,f:0.3,kcal:null,src:'reference',verify:false,note:''},
+  {id:'egg',name:'Egg, boiled',aliases:['egg','eggs','boiled egg','boiled eggs'],unit:'piece',per:1,p:6.3,c:0.6,f:5.3,kcal:null,src:'reference',verify:false,note:'One large egg (about 50 g).'},
+  {id:'apple',name:'Apple',aliases:['apple'],unit:'g',per:100,p:0.3,c:13.8,f:0.2,kcal:null,src:'reference',verify:false,pieceG:{small:120,medium:150,big:200},note:''},
+  {id:'banana',name:'Banana',aliases:['banana','elaichi banana'],unit:'g',per:100,p:1.1,c:22.8,f:0.3,kcal:null,src:'reference',verify:false,pieceG:{small:60,medium:110,big:140},note:'Peeled weight. Small covers elaichi bananas.'},
+  {id:'beetroot',name:'Beetroot',aliases:['beetroot','beet'],unit:'g',per:100,p:1.6,c:9.6,f:0.2,kcal:null,src:'reference',verify:false,pieceG:{small:100,medium:150,big:250},note:''},
+  {id:'carrot',name:'Carrot',aliases:['carrot','gajar'],unit:'g',per:100,p:0.9,c:9.6,f:0.2,kcal:null,src:'reference',verify:false,pieceG:{small:50,medium:75,big:120},note:''},
+  {id:'amla',name:'Amla',aliases:['amla','gooseberry'],unit:'g',per:100,p:0.9,c:10.2,f:0.6,kcal:null,src:'reference',verify:false,pieceG:{small:20,medium:30,big:45},note:''},
+  {id:'mango',name:'Mango (pulp)',aliases:['mango','aamba'],unit:'g',per:100,p:0.8,c:15,f:0.4,kcal:null,src:'reference',verify:false,pieceG:{small:100,medium:150,big:220},note:'Edible part only.'},
+  {id:'watermelon',name:'Watermelon',aliases:['watermelon','kalingad'],unit:'g',per:100,p:0.6,c:7.6,f:0.2,kcal:null,src:'reference',verify:false,note:''},
+  {id:'pumpkin-seeds',name:'Pumpkin seeds',aliases:['pumpkin seeds'],unit:'g',per:100,p:29.8,c:14.7,f:49.1,kcal:574,src:'reference',verify:false,note:''},
+  {id:'sunflower-seeds',name:'Sunflower seeds',aliases:['sunflower seeds'],unit:'g',per:100,p:20.8,c:20,f:51.5,kcal:584,src:'reference',verify:false,note:''},
+  {id:'besan-chila',name:'Besan chila',aliases:['besan chila','chilla','besan cheela'],unit:'g',per:100,p:9,c:22,f:9,kcal:null,src:'estimate',verify:false,note:'Cooked weight, with oil.'},
+  {id:'fried-fish',name:'Fish, fried',aliases:['fried fish','fish fry'],unit:'g',per:100,p:20,c:6,f:11,kcal:null,src:'estimate',verify:false,note:'Rava or masala fried.'},
+  {id:'chicken',name:'Chicken, cooked (boneless)',aliases:['chicken','cooked chicken','chicken pieces'],unit:'g',per:100,p:27,c:0,f:8,kcal:null,src:'reference',verify:false,note:'Meat only. Curries are estimated as a whole dish.'},
+  {id:'soyabean',name:'Soyabean, cooked',aliases:['soyabean','soybean','soyabean sabji','cooked soyabean','cooked soyabean sabji','soya'],unit:'g',per:100,p:16.6,c:9.9,f:9,kcal:173,src:'reference',verify:false,note:'Boiled soyabean. Sabji oil adds a little extra fat.'},
+  {id:'paneer',name:'Paneer',aliases:['paneer'],unit:'g',per:100,p:18.3,c:1.2,f:20.8,kcal:null,src:'reference',verify:false,note:''},
+  {id:'curd',name:'Curd (dahi)',aliases:['curd','dahi'],unit:'g',per:100,p:3.5,c:4.7,f:3.3,kcal:null,src:'reference',verify:false,note:'Plain, from toned milk.'},
+  {id:'lassi',name:'Lassi, sweet',aliases:['lassi','sweet lassi'],unit:'ml',per:100,p:3,c:13,f:3,kcal:null,src:'estimate',verify:false,note:'1 glass ≈ 250 ml.'},
+  {id:'chai',name:'Chai with milk and sugar',aliases:['chai','tea'],unit:'cup',per:1,p:2.5,c:12,f:2.5,kcal:null,src:'estimate',verify:false,note:'One cup ≈ 150 ml.'},
+  {id:'idli',name:'Idli',aliases:['idli'],unit:'piece',per:1,p:2,c:12,f:0.2,kcal:null,src:'reference',verify:false,note:'About 50 g each.'},
+  {id:'meduvada',name:'Medu vada',aliases:['meduvada','medu vada','vada'],unit:'piece',per:1,p:3,c:10,f:5,kcal:null,src:'estimate',verify:false,note:'About 40 g each.'},
+  {id:'methi-laddoo',name:'Methi laddoo',aliases:['methi laddoo','methi ladoo'],unit:'piece',per:1,p:2.7,c:15,f:6.6,kcal:null,src:'estimate',verify:false,note:'About 30 g each.'},
+  {id:'tilgul-laddoo',name:'Tilgul laddoo',aliases:['tilgul laddoo','tilgul','til laddoo'],unit:'piece',per:1,p:2,c:11,f:4.8,kcal:null,src:'estimate',verify:false,note:'About 20 g each.'},
+  {id:'oil',name:'Cooking oil',aliases:['oil'],unit:'g',per:100,p:0,c:0,f:100,kcal:null,src:'reference',verify:false,note:'1 tsp ≈ 5 g.'},
+
+  {id:'omelette',name:'Omelette (per egg)',aliases:['omelette','omlette','omelet'],unit:'piece',per:1,p:6.3,c:0.6,f:9.3,kcal:null,src:'estimate',verify:false,note:'One egg cooked with about 4 g oil. “Omlette of 2 eggs” counts as 2.'},
+  {id:'buttermilk',name:'Buttermilk (chaas)',aliases:['buttermilk','chaas','buttermilk chaas','taak'],unit:'ml',per:100,p:1.2,c:1.8,f:0.8,kcal:null,src:'estimate',verify:false,note:'Thin homemade chaas.'},
+  {id:'chana',name:'Chana, boiled',aliases:['boiled chana','chana','kala chana','boiled kala chana'],unit:'g',per:100,p:8.9,c:27.4,f:2.6,kcal:null,src:'reference',verify:false,note:''},
+  {id:'sugar',name:'Sugar',aliases:['sugar'],unit:'g',per:100,p:0,c:100,f:0,kcal:null,src:'reference',verify:false,note:''},
+  {id:'coffee',name:'Coffee with milk and sugar',aliases:['coffee','sugar coffee','cup sugar coffee'],unit:'cup',per:1,p:2.5,c:12,f:2.5,kcal:null,src:'estimate',verify:false,note:'One cup ≈ 150 ml.'},
+  {id:'peda',name:'Peda',aliases:['peda','peda sweet','mava peda','modak peda','modak peda sweet'],unit:'piece',per:1,p:2,c:15,f:4,kcal:null,src:'estimate',verify:false,g:25,note:'About 25 g each.'},
+  {id:'papad',name:'Papad, fried',aliases:['fried papad','papad'],unit:'piece',per:1,p:2.3,c:5,f:3.4,kcal:null,src:'estimate',verify:false,note:'One medium papad.'},
+  {id:'banana-chips',name:'Banana chips',aliases:['banana chips','fried banana chips'],unit:'g',per:100,p:2.3,c:58,f:34,kcal:519,src:'reference',verify:false,note:''},
+  {id:'water',name:'Water',aliases:['water'],unit:'ml',per:100,p:0,c:0,f:0,kcal:0,src:'reference',verify:false,note:''}
+,
+  {id:'jackfruit',name:'Jackfruit',aliases:['jackfruit','phanas'],unit:'g',per:100,p:1.7,c:23,f:0.6,kcal:null,src:'reference',verify:false,pieceG:{small:15,medium:20,big:30},note:'Pieces = edible bulbs.'},
+  {id:'chikoo',name:'Chikoo (sapota)',aliases:['chickoo','chikoo','chiku','sapota'],unit:'g',per:100,p:0.4,c:20,f:1.1,kcal:null,src:'reference',verify:false,pieceG:{small:70,medium:100,big:130},note:''},
+  {id:'orange',name:'Orange',aliases:['orange','santra'],unit:'g',per:100,p:0.9,c:11.8,f:0.1,kcal:null,src:'reference',verify:false,pieceG:{small:100,medium:130,big:180},note:'Peeled weight.'},
+  {id:'kiwi',name:'Kiwi',aliases:['kiwi'],unit:'g',per:100,p:1.1,c:14.7,f:0.5,kcal:null,src:'reference',verify:false,pieceG:{small:60,medium:75,big:100},note:''},
+  {id:'lychee',name:'Lychee',aliases:['lychee','litchi'],unit:'g',per:100,p:0.8,c:16.5,f:0.4,kcal:null,src:'reference',verify:false,pieceG:{small:8,medium:10,big:12},note:'Peeled weight.'},
+  {id:'bhakri',name:'Bhakri (jowar)',aliases:['bhakari','bhakri','jowar bhakri'],unit:'piece',per:1,p:4.7,c:32.5,f:1.5,kcal:null,src:'estimate',verify:false,g:60,note:'About 60 g each.'},
+  {id:'pav',name:'Pav',aliases:['pav','ladi pav'],unit:'piece',per:1,p:3.5,c:20,f:1.5,kcal:null,src:'estimate',verify:false,g:40,note:'About 40 g each.'},
+  {id:'puranpoli',name:'Puran poli',aliases:['puranpoli','puran poli'],unit:'piece',per:1,p:5,c:45,f:7,kcal:null,src:'estimate',verify:false,g:80,note:'About 80 g each.'},
+  {id:'puri',name:'Puri, fried',aliases:['puri','fried puri','poori'],unit:'piece',per:1,p:2,c:11,f:6,kcal:null,src:'estimate',verify:false,g:25,note:'About 25 g each.'},
+  {id:'modak',name:'Modak, steamed',aliases:['modak','steamed modak','steamed modak sweet','ukadiche modak'],unit:'piece',per:1,p:1.6,c:13,f:3.2,kcal:null,src:'estimate',verify:false,g:40,note:'About 40 g each.'}
+];
+const PIECE_G = {chapati:40, egg:50, idli:50, meduvada:40, 'methi-laddoo':30, 'tilgul-laddoo':20};
+DEFAULT_FOODS.forEach(f => { if (PIECE_G[f.id]) f.g = PIECE_G[f.id]; });
+const DEFAULT_PROFILE = {sex:'male',heightCm:null,age:null,gymDays:5,surplusPct:10,proteinPerKg:2.0,fatPerKg:0.9,weights:[],override:{kcal:null,p:null,c:null,f:null}};
+const UNITS = ['g','ml','piece','scoop','cup','glass','plate','bowl'];
+const STORE_KEY = 'macrolog.v1';
+
+/* ---------------- helpers ---------------- */
+const esc = s => String(s ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const nfmt = new Intl.NumberFormat('en-IN',{maximumFractionDigits:0});
+const fmt = n => (n == null || !isFinite(n)) ? '–' : nfmt.format(Math.round(n));
+const fmt1 = n => (n == null || !isFinite(n)) ? '–' : String(Math.round(n * 10) / 10);
+const r1 = n => Math.round(n * 10) / 10;
+const pad = n => String(n).padStart(2, '0');
+const ymd = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const parseYmd = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (s, n) => { const d = parseYmd(s); d.setDate(d.getDate() + n); return ymd(d); };
+const todayStr = () => ymd(new Date());
+const DOW = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const niceDate = s => parseYmd(s).toLocaleDateString('en-IN', {weekday:'short', day:'numeric', month:'short'});
+const longDate = s => parseYmd(s).toLocaleDateString('en-IN', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+const clone = o => JSON.parse(JSON.stringify(o));
+const num = v => { if (v === '' || v == null) return null; const n = Number(String(v).replace(',', '.')); return isFinite(n) ? n : null; };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const unitText = (u, q) => (u === 'g' || u === 'ml') ? u : u === 'glass' ? (q === 1 ? 'glass' : 'glasses') : (q === 1 ? u : u + 's');
+const normSplit = s => String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+
+/* ---------------- state ---------------- */
+const S = {
+  lastBackup:null,
+  noStore:false, loaded:false, slow:false, loadErr:null,
+  profile:clone(DEFAULT_PROFILE), foods:clone(DEFAULT_FOODS), foodsFromDb:false, months:{},
+  tab:'log', date:todayStr(), draft:null, dirty:false,
+  meal:'', busy:false, msg:null, addOpen:false, addQ:'',
+  histFilter:'all', histN:60, wq:'', foodEdit:null, foodQ:'', saving:false, pendingRender:false
+};
+
+/* ---------------- maths ---------------- */
+const baseKcal = b => (b.kcal != null && b.kcal !== '') ? Number(b.kcal) : 4 * b.p + 4 * b.c + 9 * b.f;
+function itemMac(it) {
+  const k = it.base.per ? it.qty / it.base.per : 0;
+  return {p: it.base.p * k, c: it.base.c * k, f: it.base.f * k, kcal: baseKcal(it.base) * k};
+}
+function sumItems(items) {
+  const t = {p:0, c:0, f:0, kcal:0};
+  for (const it of items) { const m = itemMac(it); t.p += m.p; t.c += m.c; t.f += m.f; t.kcal += m.kcal; }
+  return t;
+}
+function dayTotals(day) {
+  if (!day) return null;
+  if (day.items && day.items.length) { const t = sumItems(day.items); return {kcal:t.kcal, p:t.p, c:t.c, f:t.f}; }
+  return day.tot || null;
+}
+function latestWeight(p) {
+  const w = (p.weights || []).slice().sort((a, b) => a.d < b.d ? -1 : a.d > b.d ? 1 : 0);
+  return w.length ? w[w.length - 1] : null;
+}
+function computeTargets(p) {
+  const w = latestWeight(p);
+  let calc = null;
+  if (w && p.heightCm && p.age) {
+    const bmr = 10 * w.kg + 6.25 * p.heightCm - 5 * p.age + (p.sex === 'female' ? -161 : 5);
+    const g = Number(p.gymDays);
+    const fac = g <= 1 ? 1.2 : g <= 3 ? 1.375 : g <= 5 ? 1.55 : 1.725;
+    const maint = bmr * fac;
+    const kcal = Math.round(maint * (1 + p.surplusPct / 100) / 10) * 10;
+    const pr = Math.round(p.proteinPerKg * w.kg);
+    const fa = Math.round(p.fatPerKg * w.kg);
+    const ca = Math.max(0, Math.round((kcal - pr * 4 - fa * 9) / 4));
+    calc = {bmr, fac, maint, kcal, p:pr, f:fa, c:ca, kg:w.kg};
+  }
+  const o = p.override || {};
+  const has = k => o[k] != null && o[k] !== '';
+  const t = {calc};
+  for (const k of ['kcal','p','f']) t[k] = has(k) ? Number(o[k]) : (calc ? calc[k] : null);
+  if (has('c')) t.c = Number(o.c);
+  else if ((has('kcal') || has('p') || has('f')) && t.kcal != null && t.p != null && t.f != null) t.c = Math.max(0, Math.round((t.kcal - t.p * 4 - t.f * 9) / 4));
+  else t.c = calc ? calc.c : null;
+  t.ready = t.kcal != null && t.p != null;
+  return t;
+}
+
+/* ---------------- days ---------------- */
+const monthId = d => 'm' + d.slice(0, 7);
+const getDay = d => (S.months[monthId(d)] || {})[d] || null;
+function allDays() {
+  const out = [];
+  for (const days of Object.values(S.months)) for (const [d, v] of Object.entries(days || {})) out.push([d, v]);
+  out.sort((a, b) => a[0] < b[0] ? 1 : a[0] > b[0] ? -1 : 0);
+  return out;
+}
+const blankDay = () => ({food:'', items:[], split:'', workout:'', count:null, imp:0, c:0, src:'app'});
+function openDraft(d, keep) {
+  const day = getDay(d);
+  S.draft = day ? Object.assign(blankDay(), clone(day)) : blankDay();
+  if (!Array.isArray(S.draft.items)) S.draft.items = [];
+  S.dirty = false;
+  if (!keep) { S.meal = ''; S.msg = null; S.addOpen = false; S.addQ = ''; }
+}
+function markDirty() {
+  if (!S.dirty) { S.dirty = true; const sb = document.querySelector('.savebar'); if (!sb) render(); else sb.hidden = false; }
+}
+
+/* ---------------- storage ---------------- */
+function persist() {
+  const data = {app:'macro-log', version:1, months:S.months, profile:S.profile, foods:S.foods, foodsFromDb:S.foodsFromDb, lastBackup:S.lastBackup};
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(data)); }
+  catch (e) { throw {code:'quota_exceeded', message:String(e && e.message || e)}; }
+}
+async function writeDoc(id, data) {
+  const body = clone(data);
+  const prev = {months:clone(S.months), profile:clone(S.profile), foods:clone(S.foods)};
+  if (id === 'foods') { S.foods = body.items; S.foodsFromDb = true; }
+  else if (id === 'profile') S.profile = body;
+  else S.months[id] = body.days;
+  try { persist(); }
+  catch (e) { S.months = prev.months; S.profile = prev.profile; S.foods = prev.foods; throw e; }
+}
+function storeErr(e) {
+  const c = e && e.code;
+  if (c === 'quota_exceeded') return 'Couldn’t save: your phone’s browser storage is full or blocked. Download a backup, then free some space.';
+  return 'Couldn’t save' + (e && e.message ? ': ' + e.message : '.') + ' Try again.';
+}
+
+/* ---------------- food parser ---------------- */
+/* ---- rule-based food parser (no AI) ---- */
+const NUMW = {a:1, an:1, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, ten:10, eleven:11, twelve:12, half:0.5, quarter:0.25};
+const UNIT_RE = /^(gms?|grams?|grm|g|ml|ltr|litres?|liters?|l|kg|scoops?|pieces?|pcs|pc|cups?|glass(?:es)?|plates?|spoons?|tsp|tbsp|bowls?|slices?)\b\.?\s*/;
+const UNIT_NORM = u => /^(gms?|grams?|grm|g)$/.test(u) ? 'g' : /^ml$/.test(u) ? 'ml' : /^(ltr|litres?|liters?|l)$/.test(u) ? 'l' : u === 'kg' ? 'kg'
+  : /^scoop/.test(u) ? 'scoop' : /^(pieces?|pcs|pc)$/.test(u) ? 'piece' : /^cup/.test(u) ? 'cup' : /^glass/.test(u) ? 'glass'
+  : /^plate/.test(u) ? 'plate' : /^(spoons?|tbsp)$/.test(u) ? 'spoon' : u === 'tsp' ? 'tsp' : /^bowl/.test(u) ? 'bowl' : /^slice/.test(u) ? 'slice' : u;
+const STOP = new Set(['of','size','sized','the','a','an','fresh','piece','pieces','pcs','pc','in','it','fruit','fruits']);
+function normName(s) {
+  return String(s).toLowerCase().replace(/\([^)]*\)/g, ' ').replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/)
+    .filter(w => w && !STOP.has(w))
+    .map(w => (w.length <= 3 || /ss$/.test(w)) ? w : /ies$/.test(w) ? w.slice(0, -3) + 'y' : /(oes|ches|shes|xes)$/.test(w) ? w.slice(0, -2) : /s$/.test(w) ? w.slice(0, -1) : w)
+    .join(' ');
+}
+function readQty(s) {
+  let m, q = null, note = '';
+  const N = '(\\d+(?:\\.\\d+)?|' + Object.keys(NUMW).join('|') + ')';
+  const val = t => /^\d/.test(t) ? parseFloat(t) : NUMW[t];
+  if ((m = s.match(new RegExp('^' + N + '\\s+and\\s+(?:a\\s+)?half\\b\\s*')))) { q = val(m[1]) + 0.5; }
+  else if ((m = s.match(/^(\d+(?:\.\d+)?)\s*(?:-|to)\s*(\d+(?:\.\d+)?)\s*/))) { q = (parseFloat(m[1]) + parseFloat(m[2])) / 2; note = 'range, used the middle'; }
+  else if ((m = s.match(/^(\d+)\s*\/\s*(\d+)\s+/))) { q = parseInt(m[1]) / parseInt(m[2]); }
+  else if ((m = s.match(new RegExp('^' + N + '\\b\\s*')))) { q = val(m[1]); }
+  if (m) s = s.slice(m[0].length);
+  return {q, s, note};
+}
+function parsePart(raw) {
+  let s = raw.toLowerCase().replace(/\s+/g, ' ').trim().replace(/^[,.\s]+|[,.\s]+$/g, '');
+  let extra = '';
+  const wi = s.search(/\b(which|that|having)\b/);
+  if (wi > 0) { extra = s.slice(wi).trim(); s = s.slice(0, wi).trim(); }
+  let {q, s:rest, note} = readQty(s);
+  let unit = null, m;
+  if ((m = rest.match(UNIT_RE))) { unit = UNIT_NORM(m[1]); rest = rest.slice(m[0].length); }
+  rest = rest.replace(/^\/\s*\d+(?:\.\d+)?\s*[a-z]+\s*/, '').replace(/^of\s+/, '');
+  // "x pieces" written after the name: "4 meduvada pieces"
+  if (!unit && /\bpieces?\b/.test(rest)) unit = 'piece';
+  let size = null;
+  if ((m = rest.match(/\bvery big\b|\bvery large\b/))) size = 'xbig';
+  else if ((m = rest.match(/\b(small|medium|big|large)\b/))) size = m[1] === 'large' ? 'big' : m[1];
+  const name = rest.replace(/\b(very big|very large|small|medium|big|large)\b/g, ' ').replace(/\s+/g, ' ').trim();
+  return {raw:raw.trim(), q, unit, size, name, extra, note};
+}
+function splitLog(text) {
+  const out = [];
+  for (let part of String(text).split(/[,\n;]+/)) {
+    part = part.trim(); if (!part) continue;
+    // "omlette of 2 eggs" stays together
+    const pieces = /\b(which|that)\b/.test(part) ? [part] : part.split(/\s+with\s+|\s+and\s+(?=\d)|\s*\+\s*(?=\d)/);
+    for (const p of pieces) if (p.trim()) out.push(p.trim());
+  }
+  return out;
+}
+function findFood(foods, name) {
+  const n = normName(name);
+  if (!n) return null;
+  for (const f of foods) {
+    const keys = [f.name].concat(f.aliases || []);
+    if (keys.some(k => normName(k) === n)) return f;
+  }
+  return null;
+}
+/* returns {foodId|null, qty, unit, note, needs} in the food's own unit */
+function toFoodQty(f, p) {
+  let q = p.q, notes = [];
+  if (p.note) notes.push(p.note);
+  if (q == null) { q = 1; notes.push('no amount given, used 1'); }
+  const u = p.unit;
+  const sizeG = sz => f.pieceG ? (sz === 'xbig' ? Math.round(f.pieceG.big * 1.25) : f.pieceG[sz || 'medium']) : null;
+  if (f.unit === 'g' || f.unit === 'ml') {
+    if (u === f.unit) return {qty:q, notes};
+    if ((u === 'g' && f.unit === 'ml') || (u === 'ml' && f.unit === 'g')) { notes.push('1 ' + u + ' counted as 1 ' + f.unit); return {qty:q, notes}; }
+    if (u === 'kg' || u === 'l') return {qty:q * 1000, notes};
+    if (!u || u === 'piece') {
+      const g = sizeG(p.size);
+      if (g) { notes.push(fmtQ(q) + ' ' + (p.size === 'xbig' ? 'very big' : p.size || 'medium') + ' = ' + Math.round(q * g) + ' ' + f.unit); return {qty:q * g, notes}; }
+      if (p.q != null && p.q >= 10) { notes.push('no unit given, taken as ' + f.unit); return {qty:q, notes}; }
+      return {qty:q, notes, needs:'Amount unclear: enter it in ' + f.unit};
+    }
+    const per = {glass:250, cup:150, bowl:150, spoon:15, tsp:5, plate:250, slice:30}[u];
+    if (per) { notes.push('1 ' + u + ' taken as ' + per + ' ' + f.unit + '; adjust if needed'); return {qty:q * per, notes}; }
+    return {qty:q, notes, needs:'Amount unclear: enter it in ' + f.unit};
+  }
+  // piece / scoop / cup / plate / glass foods
+  if (!u || u === f.unit || (u === 'piece' && f.unit !== 'scoop')) return {qty:q, notes};
+  if ((u === 'g' || u === 'ml') && f.g) { notes.push(fmtQ(q) + ' ' + u + ' at ' + f.g + ' g each'); return {qty:q / f.g, notes}; }
+  return {qty:q, notes, needs:'Check the amount: your log says ' + u + ', this food is counted in ' + f.unit};
+}
+const fmtQ = n => String(Math.round(n * 100) / 100);
+function parseLog(text, foods) {
+  const items = [];
+  for (const part of splitLog(text)) {
+    const p = parsePart(part);
+    // omelette of N eggs
+    let m = (p.name + ' ' + p.extra).match(/^(omlette|omelette|omelet|omlet)\s+of\s+(.*?)\s*eggs?\b/) || p.raw.toLowerCase().match(/^(omlette|omelette|omelet|omlet)\s+of\s+(.*?)\s*eggs?\b/);
+    if (m) {
+      const om = foods.find(f => f.id === 'omelette');
+      const qq = readQty(m[2].trim()).q;
+      if (om) { items.push(libItem(om, qq || 1, part, '')); continue; }
+    }
+    let f = findFood(foods, p.name);
+    if (f) {
+      const r = toFoodQty(f, p);
+      items.push(libItem(f, r.qty, part, r.notes.join('; '), r.needs));
+    } else {
+      const unit = p.unit || 'piece';
+      const q = p.q == null ? 1 : p.q;
+      items.push({kind:'est', foodId:null, name:cap(p.name || part), qty:Math.round(q * 10) / 10, unit, base:{per:Math.round(q * 10) / 10 || 1, p:0, c:0, f:0, kcal:null}, text:part, note:'Not in your foods yet. Enter its macros, then save it to your foods.', bad:true, key:normName(p.name)});
+    }
+  }
+  return items;
+}
+function libItem(f, qty, text, note, needs) {
+  return {kind:'lib', foodId:f.id, name:f.name, qty:Math.round(qty * 10) / 10, unit:f.unit, base:{per:f.per, p:f.p, c:f.c, f:f.f, kcal:f.kcal ?? null}, text, note:note || '', check:needs || ''};
+}
+const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+
+
+function runParse(text, replace) {
+  let combined = null;
+  if (!replace && S.draft.food && !S.draft.items.length) { combined = S.draft.food.replace(/[\s,]+$/, '') + ', ' + text.trim(); text = combined; replace = true; }
+  const items = parseLog(text, S.foods);
+  if (!items.length) { S.msg = {err:true, t:'Nothing to calculate. Type what you ate, separated by commas.'}; render(); return; }
+  if (replace) { S.draft.items = items; if (combined) { S.draft.food = combined; S.meal = ''; } }
+  else {
+    S.draft.items = S.draft.items.concat(items);
+    S.draft.food = S.draft.food ? S.draft.food.replace(/[\s,]+$/, '') + ', ' + text.trim() : text.trim();
+    S.meal = '';
+  }
+  S.dirty = true;
+  const bad = items.filter(i => i.bad).length, chk = items.filter(i => i.check).length;
+  const parts = [];
+  if (bad) parts.push(bad + ' food' + (bad > 1 ? 's aren’t' : ' isn’t') + ' in your list yet. Enter the macros once and press “Save to my foods”; next time it’s automatic.');
+  if (chk) parts.push(chk + ' amount' + (chk > 1 ? 's need' : ' needs') + ' a check.');
+  S.msg = parts.length ? {err:!!bad, t:parts.join(' ')} : null;
+  render();
+}
+
+/* ---------------- render ---------------- */
+function render() {
+  const a = document.activeElement;
+  if (a && a.closest && a.closest('#view') && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && !a.dataset.allowRender) {
+    S.pendingRender = true; return;
+  }
+  S.pendingRender = false;
+  document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-current', b.dataset.tab === S.tab ? 'page' : 'false'));
+  const v = document.getElementById('view');
+  if (S.noStore) { v.innerHTML = '<h1>Macro Log</h1><div class="card"><p>This browser is blocking storage, so nothing can be saved. Open the page in Chrome (not an incognito tab) and try again.</p></div>'; return; }
+  if (!S.loaded) { v.innerHTML = '<p class="loading">' + (S.loadErr ? esc(S.loadErr) : S.slow ? 'Your log is taking a while to load. Check your connection; it will appear as soon as it arrives.' : 'Loading your log…') + '</p>'; return; }
+  const html = {log:viewLog, history:viewHistory, workouts:viewWorkouts, foods:viewFoods, me:viewMe}[S.tab]();
+  v.innerHTML = (S.slow ? '<div class="notice">Showing a saved copy. Changes may not be up to date yet.</div>' : '') + html;
+}
+
+function meterRow(name, color, val, target, unit, kind) {
+  let stat = '', cls = '';
+  if (target != null && target > 0) {
+    const diff = target - val;
+    if (kind === 'p') { if (diff <= 0) { stat = 'Target hit'; cls = 'good'; } else stat = fmt(diff) + ' ' + unit + ' to go'; }
+    else if (kind === 'kcal') { if (Math.abs(diff) <= target * 0.05) { stat = 'On target'; cls = 'good'; } else if (diff > 0) stat = fmt(diff) + ' left'; else { stat = fmt(-diff) + ' over'; cls = 'warn'; } }
+    else { if (diff >= 0) stat = fmt(diff) + ' ' + unit + ' left'; else { stat = fmt(-diff) + ' ' + unit + ' over'; cls = 'warn'; } }
+  }
+  const pct = target ? Math.min(100, val / target * 100) : 0;
+  const overPct = target && val > target ? Math.min(100, (val - target) / val * 100) : 0;
+  return '<div class="mrow"><div class="mhead"><span class="mname">' + name + '</span><span class="mval">' + fmt(val) +
+    (target != null ? ' <small>/ ' + fmt(target) + ' ' + unit + '</small>' : ' <small>' + unit + '</small>') + '</span><span class="mstat ' + cls + '">' + stat + '</span></div>' +
+    (target != null ? '<div class="track" aria-hidden="true"><div class="fill" style="width:' + pct.toFixed(1) + '%;background:' + color + '"></div>' +
+      (overPct ? '<div class="over" style="left:' + (100 - overPct).toFixed(1) + '%;right:0"></div>' : '') + '</div>' : '') + '</div>';
+}
+
+function viewLog() {
+  const d = S.draft, T = computeTargets(S.profile);
+  const tot = d.items.length ? sumItems(d.items) : (d.tot || {kcal:0, p:0, c:0, f:0});
+  const isToday = S.date === todayStr();
+  let h = '<div class="datebar"><button class="iconbtn" data-act="prev" aria-label="Previous day">‹</button>' +
+    '<div class="d"><div class="big">' + esc(isToday ? 'Today' : niceDate(S.date)) + '</div><div class="muted small">' + esc(longDate(S.date)) + '</div></div>' +
+    '<button class="iconbtn" data-act="next" aria-label="Next day">›</button></div>' +
+    '<div class="row" style="justify-content:center;margin-bottom:6px"><input type="date" data-act="pickdate" value="' + S.date + '" style="max-width:190px;min-height:40px" aria-label="Pick a date">' +
+    (isToday ? '' : '<button class="linkbtn" data-act="today">Go to today</button>') + '</div>';
+
+  h += '<section class="meter" aria-label="Today against target">' +
+    meterRow('Calories', 'var(--k)', tot.kcal, T.kcal, 'kcal', 'kcal') +
+    meterRow('Protein', 'var(--p)', tot.p, T.p, 'g', 'p') +
+    meterRow('Carbs', 'var(--c)', tot.c, T.c, 'g', 'c') +
+    meterRow('Fat', 'var(--f)', tot.f, T.f, 'g', 'f') +
+    (T.ready ? '' : '<p class="notarget">Add your weight, height and age under Me to see targets.</p>') + '</section>';
+
+  if (!Object.keys(S.months).length) h += '<div class="notice" style="margin-top:12px">New here? To bring in your 2026 history, go to <b>Me</b> and press <b>Restore from backup</b>.</div>';
+  // food card
+  h += '<section class="card"><h2>Food</h2>';
+  if (d.food) h += '<p class="small muted" style="margin-bottom:4px">What you ate</p><div class="foodtext">' + esc(d.food) + '</div>';
+  if (d.food && !d.items.length) {
+    if (d.tot) h += '<div class="notice">These totals came from your Excel sheet. Calculate again to get an item-by-item breakdown with your current food values.</div>';
+    else h += '<div class="notice">This day has food but no macros yet.</div>';
+    h += '<button class="btn ghost" data-act="calcday">Calculate this day’s food</button>';
+  }
+  h += '<label class="f" for="meal">' + (d.food ? 'Add more food' : 'What did you eat?') + '</label>' +
+    '<textarea id="meal" data-in="meal" placeholder="100 gm oats with 280 ml boiled milk, 4 chapati, 3 boiled eggs, 1 big size apple">' + esc(S.meal) + '</textarea>' +
+    '<div class="row" style="margin-top:8px">' +
+    '<button class="btn" data-act="calc">Calculate and add</button>' +
+    '<button class="btn quiet" data-act="toggleadd" aria-expanded="' + S.addOpen + '">Add from my foods</button></div>';
+  if (S.msg) h += '<div class="notice ' + (S.msg.err ? 'err' : '') + '" role="status">' + esc(S.msg.t) + '</div>';
+  if (S.addOpen) h += '<div class="addpanel"><input type="search" data-in="addq" placeholder="Search your foods" value="' + esc(S.addQ) + '" aria-label="Search your foods"><div id="addres">' + addResults() + '</div>' +
+    '<button class="linkbtn" data-act="addcustom">Add a food that isn’t on the list</button></div>';
+
+  if (d.items.length) {
+    h += '<div style="margin-top:12px">';
+    d.items.forEach((it, i) => { h += itemRow(it, i); });
+    h += '</div><div class="totline"><span>' + fmt(tot.kcal) + ' kcal</span><span style="color:var(--p)">P ' + fmt1(tot.p) + ' g</span><span style="color:var(--c)">C ' + fmt1(tot.c) + ' g</span><span style="color:var(--f)">F ' + fmt1(tot.f) + ' g</span></div>';
+  }
+  h += '</section>';
+
+  // workout card
+  const splits = [...new Set(allDays().map(([, v]) => (v.split || '').trim()).filter(Boolean))].sort();
+  h += '<section class="card"><h2>Workout</h2><label class="f" for="split">Split</label>' +
+    '<input type="text" id="split" data-in="split" list="splitlist" value="' + esc(d.split) + '" placeholder="Back + Traps, Legs, Rest, Skipped…" autocomplete="off">' +
+    '<datalist id="splitlist">' + splits.map(s => '<option value="' + esc(s) + '">').join('') + '</datalist>' +
+    '<div id="lasttime">' + lastTimeHtml() + '</div>' +
+    '<label class="f" for="wk">Exercises, weight × reps</label><textarea id="wk" data-in="workout" placeholder="Bar squats - 20.4x10/27.2x8/31.7x6, Leg extension - 9x15/10x12">' + esc(d.workout) + '</textarea></section>';
+
+  // counts card
+  h += '<section class="card"><h2>Daily checks</h2><div class="grid2"><div><label class="f" for="cnt">Counting</label>' +
+    '<input type="number" id="cnt" inputmode="numeric" data-in="count" value="' + (d.count ?? '') + '"></div><div></div></div>' +
+    '<label class="f">Imp</label>' + seg('imp', d.imp) + '<label class="f">C</label>' + seg('c', d.c) + '</section>';
+
+  const exists = !!getDay(S.date);
+  h += '<div class="savebar" ' + (S.dirty ? '' : 'hidden') + '><button class="btn" data-act="save" ' + (S.saving ? 'disabled' : '') + '>' + (S.saving ? 'Saving…' : 'Save day') + '</button>' +
+    '<button class="btn quiet" data-act="discard">Discard changes</button></div>';
+  if (exists && !S.dirty) h += '<div class="row" style="justify-content:center;margin:18px 0"><button class="linkbtn" style="color:var(--bad)" data-act="delday">Delete this day</button></div>';
+  return h;
+}
+function seg(key, val) {
+  const opts = [[0, 'No'], [1, 'Yes'], [2, 'Yes ×2']];
+  return '<div class="seg" role="group">' + opts.map(([v, l]) => '<button data-act="seg" data-k="' + key + '" data-v="' + v + '" aria-pressed="' + ((val || 0) === v) + '">' + l + '</button>').join('') + '</div>';
+}
+function lastTimeHtml() {
+  const s = normSplit(S.draft.split);
+  if (!s) return '';
+  const hit = allDays().find(([d, v]) => d < S.date && normSplit(v.split) === s && (v.workout || '').trim());
+  if (!hit) return '';
+  return '<div class="lasttime"><b>Last ' + esc(hit[1].split) + ', ' + esc(niceDate(hit[0])) + ':</b> ' + esc(hit[1].workout) + '</div>';
+}
+function itemRow(it, i) {
+  const m = itemMac(it);
+  const tag = it.kind === 'lib' ? '<span class="tag lib">My food</span>' + (it.check ? '<span class="tag chk">Check amount</span>' : '') : it.bad ? '<span class="tag bad">Enter macros</span>' : '<span class="tag est">Your entry</span>';
+  let src = '';
+  if (it.text && it.text.toLowerCase() !== it.name.toLowerCase()) src += '“' + esc(it.text) + '”';
+  if (it.note) src += (src ? '. ' : '') + esc(it.note);
+  if (it.check) src += (src ? '. ' : '') + '<b style="color:var(--warn)">' + esc(it.check) + '</b>';
+  let h = '<div class="item"><div class="ihead"><div class="grow"><span class="iname">' + esc(it.name) + '</span>' + tag + (src ? '<div class="isrc">' + src + '</div>' : '') + '</div>' +
+    '<button class="xbtn" data-act="rm" data-i="' + i + '" aria-label="Remove ' + esc(it.name) + '">Remove</button></div><div class="inums">' +
+    '<label class="mac"><input type="number" inputmode="decimal" step="any" min="0" data-ch="qty" data-i="' + i + '" value="' + it.qty + '" aria-label="Amount"> ' + esc(unitText(it.unit, it.qty)) + '</label>' +
+    '<b>' + fmt(m.kcal) + ' kcal</b>';
+  if (it.kind === 'lib') {
+    h += '<span><span class="dot" style="background:var(--p)"></span> ' + fmt1(m.p) + '</span><span><span class="dot" style="background:var(--c)"></span> ' + fmt1(m.c) + '</span><span><span class="dot" style="background:var(--f)"></span> ' + fmt1(m.f) + '</span>';
+  } else {
+    for (const [k, lab, col] of [['p', 'P', '--p'], ['c', 'C', '--c'], ['f', 'F', '--f']]) {
+      h += '<label class="mac"><span class="dot" style="background:var(' + col + ')"></span>' + lab + ' <input type="number" inputmode="decimal" step="any" min="0" data-ch="mac" data-k="' + k + '" data-i="' + i + '" value="' + r1(m[k]) + '" aria-label="' + lab + ' grams"></label>';
+    }
+  }
+  h += '</div>';
+  if (it.kind === 'est') h += '<button class="linkbtn small" data-act="savefood" data-i="' + i + '" ' + (it.bad ? 'disabled style="opacity:.5"' : '') + '>Save to my foods</button>' + (it.bad ? '<span class="small muted"> after you enter its macros</span>' : '');
+  return h + '</div>';
+}
+function addResults() {
+  const q = S.addQ.trim().toLowerCase();
+  const list = S.foods.filter(f => !q || f.name.toLowerCase().includes(q) || (f.aliases || []).some(a => a.includes(q))).slice(0, 10);
+  if (!list.length) return '<p class="small muted" style="margin:8px 0">No match. Use “Add a food that isn’t on the list”.</p>';
+  return list.map(f => {
+    const def = f.unit === 'g' || f.unit === 'ml' ? (f.pieceG ? f.pieceG.medium : f.per) : 1;
+    return '<div class="res"><div class="grow">' + esc(f.name) + '<div class="small muted">' + fmt(baseKcal(f)) + ' kcal per ' + f.per + ' ' + esc(unitText(f.unit, f.per)) + '</div></div>' +
+      '<input type="number" inputmode="decimal" step="any" min="0" id="aq-' + esc(f.id) + '" value="' + def + '" aria-label="Amount of ' + esc(f.name) + '"><span class="small">' + esc(f.unit) + '</span>' +
+      '<button class="btn quiet" data-act="addfood" data-id="' + esc(f.id) + '">Add</button></div>';
+  }).join('');
+}
+
+/* history */
+function windowStats(n) {
+  const T = computeTargets(S.profile);
+  const start = addDays(todayStr(), -(n - 1));
+  let k = 0, sum = {kcal:0, p:0, c:0, f:0}, hit = 0;
+  for (const [d, v] of allDays()) {
+    if (d < start || d > todayStr()) continue;
+    const t = dayTotals(v); if (!t) continue;
+    k++; sum.kcal += t.kcal; sum.p += t.p; sum.c += t.c; sum.f += t.f;
+    if (T.p && t.p >= T.p) hit++;
+  }
+  return {k, avg: k ? {kcal:sum.kcal / k, p:sum.p / k, c:sum.c / k, f:sum.f / k} : null, hit, T};
+}
+function streak() {
+  let d = todayStr(), n = 0;
+  if (!dayTotals(getDay(d))) d = addDays(d, -1);
+  while (dayTotals(getDay(d))) { n++; d = addDays(d, -1); }
+  return n;
+}
+function barChart(key, color, target, label, unit) {
+  const days = []; for (let i = 29; i >= 0; i--) days.push(addDays(todayStr(), -i));
+  const vals = days.map(d => { const t = dayTotals(getDay(d)); return t ? t[key] : null; });
+  const max = Math.max(target || 0, ...vals.filter(v => v != null), 1) * 1.1;
+  const W = 600, H = 170, L = 34, B = 22, bw = (W - L) / 30;
+  let s = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(label) + ' over the last 30 days">';
+  for (const g of [0.5, 1]) { const y = (H - B) - (H - B - 8) * g; s += '<text x="0" y="' + (y + 4) + '" font-size="11" fill="var(--muted)">' + fmt(max / 1.1 * g * 1.1) + '</text><line x1="' + L + '" x2="' + W + '" y1="' + y + '" y2="' + y + '" stroke="var(--line)"/>'; }
+  vals.forEach((v, i) => {
+    const x = L + i * bw + 2;
+    if (v == null) { s += '<rect x="' + x + '" y="' + (H - B - 2) + '" width="' + (bw - 4) + '" height="2" fill="var(--line)"/>'; return; }
+    const h = (H - B - 8) * v / max;
+    s += '<rect x="' + x + '" y="' + (H - B - h) + '" width="' + (bw - 4) + '" height="' + h + '" rx="2" fill="' + color + '"><title>' + esc(niceDate(days[i])) + ': ' + fmt(v) + ' ' + unit + '</title></rect>';
+  });
+  if (target) { const y = (H - B) - (H - B - 8) * target / max; s += '<line x1="' + L + '" x2="' + W + '" y1="' + y + '" y2="' + y + '" stroke="var(--ink)" stroke-dasharray="5 4" stroke-width="1.5"/>'; }
+  [0, 10, 20, 29].forEach(i => { s += '<text x="' + (L + i * bw + bw / 2) + '" y="' + (H - 6) + '" font-size="11" text-anchor="middle" fill="var(--muted)">' + esc(parseYmd(days[i]).getDate() + '/' + (parseYmd(days[i]).getMonth() + 1)) + '</text>'; });
+  return s + '</svg>';
+}
+function viewHistory() {
+  const w7 = windowStats(7), w30 = windowStats(30), T = w7.T;
+  const st = a => a.avg ? '<div class="big">' + fmt(a.avg.kcal) + ' kcal</div><div class="small">P ' + fmt(a.avg.p) + ' · C ' + fmt(a.avg.c) + ' · F ' + fmt(a.avg.f) + ' g</div><div class="small muted">' + a.k + ' day' + (a.k === 1 ? '' : 's') + ' with macros' + (T.p ? ', protein hit on ' + a.hit : '') + '</div>' : '<div class="small muted">No days with macros</div>';
+  let h = '<h1>History</h1><section class="card"><div class="stats"><div class="stat"><div class="small muted">Last 7 days, average</div>' + st(w7) + '</div><div class="stat"><div class="small muted">Last 30 days, average</div>' + st(w30) + '</div></div>' +
+    '<p class="small" style="margin:10px 0 0">Logging streak: <b>' + streak() + ' day' + (streak() === 1 ? '' : 's') + '</b> in a row with macros.</p></section>';
+  h += '<section class="card"><h2>Calories, last 30 days</h2><div class="legend"><span>Bars: eaten</span><span>Dashed line: target</span><span>Grey dash: no macros</span></div>' + barChart('kcal', 'var(--accent)', T.kcal, 'Calories', 'kcal') +
+    '<h2 style="margin-top:16px">Protein, last 30 days</h2>' + barChart('p', 'var(--p)', T.p, 'Protein', 'g') + '</section>';
+  const all = allDays().filter(([d]) => d <= todayStr());
+  const missing = all.filter(([, v]) => v.food && !dayTotals(v)).length;
+  const list = S.histFilter === 'missing' ? all.filter(([, v]) => v.food && !dayTotals(v)) : all;
+  h += '<section class="card"><h2>Days</h2><div class="seg" role="group" style="margin-bottom:8px"><button data-act="hf" data-v="all" aria-pressed="' + (S.histFilter === 'all') + '">All (' + all.length + ')</button><button data-act="hf" data-v="missing" aria-pressed="' + (S.histFilter === 'missing') + '">No macros (' + missing + ')</button></div>';
+  if (S.histFilter === 'missing' && missing) h += '<p class="small muted">Open a day and press “Calculate this day’s food”.</p>';
+  if (!list.length) h += '<p class="muted">Nothing here yet.</p>';
+  for (const [d, v] of list.slice(0, S.histN)) {
+    const t = dayTotals(v);
+    const pHit = t && T.p && t.p >= T.p;
+    h += '<button class="dayrow" data-act="openday" data-d="' + d + '"><span class="dd"><b>' + esc(niceDate(d)) + '</b><span class="small muted">' + esc(d.slice(0, 4)) + '</span></span><span class="nums">' +
+      (t ? '<b>' + fmt(t.kcal) + ' kcal</b> <span style="color:var(--p)">P ' + fmt(t.p) + (pHit ? ' ✓' : '') + '</span> <span class="muted">C ' + fmt(t.c) + ' F ' + fmt(t.f) + '</span>' + (v.items && v.items.length ? '' : ' <span class="tag imp">From Excel</span>')
+         : (v.food ? '<span class="tag chk">No macros</span>' : '<span class="muted">No food logged</span>')) +
+      (v.split ? '<div class="small muted">' + esc(v.split) + '</div>' : '') + '</span></button>';
+  }
+  if (list.length > S.histN) h += '<button class="btn quiet" style="width:100%;margin-top:8px" data-act="more">Show more days</button>';
+  return h + '</section>';
+}
+
+/* workouts */
+function viewWorkouts() {
+  const days = allDays().filter(([d, v]) => d <= todayStr() && (v.workout || v.split));
+  const since = addDays(todayStr(), -29);
+  const counts = {};
+  for (const [d, v] of days) if (d >= since && v.split) { const k = v.split.trim(); counts[k] = (counts[k] || 0) + 1; }
+  const top = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  let h = '<h1>Workouts</h1><section class="card"><label class="f" for="wq" style="margin-top:0">Find an exercise</label><input type="search" id="wq" data-in="wq" value="' + esc(S.wq) + '" placeholder="squats, bench press, lat pulldown…"><div id="wres">' + workoutResults(days) + '</div></section>';
+  h += '<section class="card"><h2>Last 30 days</h2>' + (top.length ? top.map(([k, n]) => '<div class="row" style="justify-content:space-between;border-top:1px solid var(--line);padding:8px 0"><span>' + esc(k) + '</span><b>' + n + '</b></div>').join('') : '<p class="muted">No workouts logged in the last 30 days.</p>') + '</section>';
+  return h;
+}
+function workoutResults(days) {
+  days = days || allDays().filter(([d, v]) => d <= todayStr() && (v.workout || v.split));
+  const q = S.wq.trim().toLowerCase();
+  if (!q) {
+    const recent = days.filter(([, v]) => (v.workout || '').trim()).slice(0, 12);
+    if (!recent.length) return '<p class="muted" style="margin-top:10px">No workouts logged yet.</p>';
+    return '<p class="small muted" style="margin:10px 0 2px">Recent sessions</p>' + recent.map(([d, v]) => '<div style="border-top:1px solid var(--line);padding:9px 0"><b>' + esc(niceDate(d)) + '</b> <span class="muted">' + esc(v.split || '') + '</span><div class="small">' + esc(v.workout) + '</div></div>').join('');
+  }
+  const out = [];
+  for (const [d, v] of days) {
+    const parts = String(v.workout || '').split(/,\s*(?![^()]*\))/);
+    for (const p of parts) if (p.toLowerCase().includes(q)) out.push([d, v.split, p.trim()]);
+    if (out.length >= 60) break;
+  }
+  if (!out.length) return '<p class="muted" style="margin-top:10px">No sessions mention “' + esc(S.wq) + '”.</p>';
+  return '<p class="small muted" style="margin:10px 0 2px">' + out.length + (out.length >= 60 ? '+' : '') + ' entries, newest first</p>' + out.map(([d, s, p]) => '<div style="border-top:1px solid var(--line);padding:9px 0"><b>' + esc(niceDate(d)) + '</b> <span class="small muted">' + esc(s || '') + ', ' + esc(d.slice(0, 4)) + '</span><div>' + esc(p) + '</div></div>').join('');
+}
+
+/* foods */
+function viewFoods() {
+  if (S.foodEdit) return foodForm();
+  const q = S.foodQ.trim().toLowerCase();
+  const list = S.foods.filter(f => !q || f.name.toLowerCase().includes(q) || (f.aliases || []).some(a => a.includes(q)));
+  const chk = list.filter(f => f.verify), rest = list.filter(f => !f.verify).sort((a, b) => a.name.localeCompare(b.name));
+  const row = f => '<button class="frow" data-act="editfood" data-id="' + esc(f.id) + '"><span class="grow"><b>' + esc(f.name) + '</b>' + (f.verify ? '<span class="tag chk">Check label</span>' : '') +
+    '<div class="small muted">Per ' + f.per + ' ' + esc(unitText(f.unit, f.per)) + ': ' + fmt(baseKcal(f)) + ' kcal, P ' + fmt1(f.p) + ', C ' + fmt1(f.c) + ', F ' + fmt1(f.f) + '</div></span><span class="muted">Edit</span></button>';
+  let h = '<h1>My foods</h1><p class="muted small">When your log mentions a food by its name or one of its other names, these values are used. Changing one affects new entries only; saved days keep the values they were saved with.</p>' +
+    '<div class="row"><input type="search" class="grow" style="width:auto" data-in="foodq" value="' + esc(S.foodQ) + '" placeholder="Search" aria-label="Search foods"><button class="btn" data-act="newfood">New food</button></div>';
+  if (chk.length) h += '<section class="card"><h2>Check these against your packs</h2>' + chk.map(row).join('') + '</section>';
+  h += '<section class="card"><h2>All foods</h2>' + (rest.length ? rest.map(row).join('') : '<p class="muted">No foods match.</p>') + '</section>';
+  return h;
+}
+function foodForm() {
+  const f = S.foodEdit, isNew = !S.foods.some(x => x.id === f.id);
+  const pg = f.pieceG || {};
+  const k = 4 * (num(f.p) || 0) + 4 * (num(f.c) || 0) + 9 * (num(f.f) || 0);
+  let h = '<h1>' + (isNew ? 'New food' : 'Edit food') + '</h1><section class="card">' +
+    '<label class="f" for="ff-name">Name</label><input id="ff-name" type="text" data-ff="name" value="' + esc(f.name) + '">' +
+    '<label class="f" for="ff-al">Other names in your log, separated by commas</label><input id="ff-al" type="text" data-ff="aliases" value="' + esc((f.aliases || []).join(', ')) + '">' +
+    '<div class="grid2"><div><label class="f" for="ff-per">Values are for</label><input id="ff-per" type="number" inputmode="decimal" step="any" data-ff="per" value="' + esc(f.per) + '"></div>' +
+    '<div><label class="f" for="ff-unit">Unit</label><select id="ff-unit" data-ff="unit">' + UNITS.map(u => '<option ' + (f.unit === u ? 'selected' : '') + '>' + u + '</option>').join('') + '</select></div></div>' +
+    '<div class="grid3"><div><label class="f" for="ff-p">Protein g</label><input id="ff-p" type="number" inputmode="decimal" step="any" data-ff="p" value="' + esc(f.p) + '"></div>' +
+    '<div><label class="f" for="ff-c">Carbs g</label><input id="ff-c" type="number" inputmode="decimal" step="any" data-ff="c" value="' + esc(f.c) + '"></div>' +
+    '<div><label class="f" for="ff-f">Fat g</label><input id="ff-f" type="number" inputmode="decimal" step="any" data-ff="f" value="' + esc(f.f) + '"></div></div>' +
+    '<label class="f" for="ff-k">Calories from the label (leave blank to use 4 × P + 4 × C + 9 × F = ' + fmt(k) + ')</label><input id="ff-k" type="number" inputmode="decimal" step="any" data-ff="kcal" value="' + esc(f.kcal ?? '') + '">';
+  if (f.unit === 'g' || f.unit === 'ml') h += '<label class="f">Weight of one piece, if you count it in pieces (' + esc(f.unit) + ')</label><div class="grid3">' +
+    ['small', 'medium', 'big'].map(s => '<div><input type="number" inputmode="decimal" step="any" data-ff="pg-' + s + '" value="' + esc(pg[s] ?? '') + '" aria-label="' + s + ' piece" placeholder="' + s + '"></div>').join('') + '</div>';
+  if (f.unit !== 'g' && f.unit !== 'ml') h += '<label class="f" for="ff-g">Grams in one ' + esc(f.unit) + ' (optional; lets “60 gm ' + esc(f.name.toLowerCase() || 'of it') + '” work)</label><input id="ff-g" type="number" inputmode="decimal" step="any" data-ff="g" value="' + esc(f.g ?? '') + '">';
+  h += '<label class="f" style="display:flex;gap:8px;align-items:center;color:var(--ink)"><input type="checkbox" data-ff="verify" ' + (f.verify ? 'checked' : '') + ' style="width:22px;height:22px"> Remind me to check this against the pack</label>' +
+    (f.note ? '<p class="small muted" style="margin-top:8px">' + esc(f.note) + '</p>' : '') +
+    (S.msg ? '<div class="notice err" role="status">' + esc(S.msg.t) + '</div>' : '') +
+    '<div class="row" style="margin-top:12px"><button class="btn" data-act="savefoodform">Save food</button><button class="btn quiet" data-act="cancelfood">Cancel</button>' +
+    (isNew ? '' : '<button class="btn danger" style="margin-left:auto" data-act="delfood">Delete</button>') + '</div></section>';
+  return h;
+}
+
+/* me */
+function viewMe() {
+  const p = S.profile, T = computeTargets(p), w = latestWeight(p);
+  const ws = (p.weights || []).slice().sort((a, b) => a.d < b.d ? 1 : -1);
+  let h = '<h1>Me</h1><section class="card"><h2>Weight</h2>' +
+    (w ? '<p><span class="big" style="font-family:\'Barlow Condensed\',sans-serif;font-size:34px;font-weight:700">' + fmt1(w.kg) + ' kg</span> <span class="muted small">on ' + esc(niceDate(w.d)) + ', ' + w.d.slice(0, 4) + '</span></p>' : '<p class="muted">No weight yet. Add today’s weight to calculate your targets.</p>') +
+    rateHtml(ws) +
+    '<div class="grid2"><div><label class="f" for="wd">Date</label><input type="date" id="wd" value="' + todayStr() + '"></div><div><label class="f" for="wkg">Weight (kg)</label><input type="number" id="wkg" inputmode="decimal" step="0.1" min="20" max="300"></div></div>' +
+    '<button class="btn" style="margin-top:10px" data-act="addweight">Add weight</button>';
+  if (ws.length) h += '<div style="margin-top:10px">' + ws.slice(0, 8).map(e => '<div class="row" style="border-top:1px solid var(--line);padding:6px 0"><span class="grow">' + esc(niceDate(e.d)) + ' ' + e.d.slice(0, 4) + '</span><b>' + fmt1(e.kg) + ' kg</b><button class="xbtn" style="margin-left:6px" data-act="delweight" data-d="' + e.d + '">Remove</button></div>').join('') + '</div>';
+  h += '</section><section class="card"><h2>About you</h2><div class="grid2">' +
+    '<div><label class="f" for="pf-h">Height (cm)</label><input id="pf-h" type="number" inputmode="decimal" data-pf="heightCm" value="' + esc(p.heightCm ?? '') + '"></div>' +
+    '<div><label class="f" for="pf-a">Age</label><input id="pf-a" type="number" inputmode="numeric" data-pf="age" value="' + esc(p.age ?? '') + '"></div>' +
+    '<div><label class="f" for="pf-s">Sex</label><select id="pf-s" data-pf="sex"><option value="male" ' + (p.sex === 'male' ? 'selected' : '') + '>Male</option><option value="female" ' + (p.sex === 'female' ? 'selected' : '') + '>Female</option></select></div>' +
+    '<div><label class="f" for="pf-g">Gym days a week</label><select id="pf-g" data-pf="gymDays">' + [0,1,2,3,4,5,6,7].map(n => '<option ' + (Number(p.gymDays) === n ? 'selected' : '') + '>' + n + '</option>').join('') + '</select></div></div></section>';
+  h += '<section class="card"><h2>Lean bulk targets</h2><div class="grid3">' +
+    '<div><label class="f" for="pf-sp">Surplus %</label><input id="pf-sp" type="number" inputmode="decimal" step="1" data-pf="surplusPct" value="' + esc(p.surplusPct) + '"></div>' +
+    '<div><label class="f" for="pf-pk">Protein g/kg</label><input id="pf-pk" type="number" inputmode="decimal" step="0.1" data-pf="proteinPerKg" value="' + esc(p.proteinPerKg) + '"></div>' +
+    '<div><label class="f" for="pf-fk">Fat g/kg</label><input id="pf-fk" type="number" inputmode="decimal" step="0.1" data-pf="fatPerKg" value="' + esc(p.fatPerKg) + '"></div></div>';
+  if (T.calc) {
+    const c = T.calc;
+    h += '<div class="formula" style="margin-top:12px">Resting burn (Mifflin–St Jeor): 10 × ' + fmt1(c.kg) + ' + 6.25 × ' + p.heightCm + ' − 5 × ' + p.age + (p.sex === 'female' ? ' − 161' : ' + 5') + ' = <b>' + fmt(c.bmr) + ' kcal</b><br>' +
+      'Maintenance at ' + p.gymDays + ' gym days: × ' + c.fac + ' = <b>' + fmt(c.maint) + ' kcal</b><br>' +
+      'Lean bulk, +' + p.surplusPct + '%: <b>' + fmt(c.kcal) + ' kcal</b><br>' +
+      'Protein ' + p.proteinPerKg + ' × ' + fmt1(c.kg) + ' = <b>' + c.p + ' g</b>, fat ' + p.fatPerKg + ' × ' + fmt1(c.kg) + ' = <b>' + c.f + ' g</b>, carbs fill the rest = <b>' + c.c + ' g</b></div>';
+  } else h += '<p class="muted" style="margin-top:10px">Add your weight, height and age to calculate targets.</p>';
+  const o = p.override || {};
+  h += '<p class="small muted" style="margin:12px 0 0">Use your own numbers instead (leave blank to use the calculated ones):</p><div class="grid4">' +
+    [['kcal', 'kcal'], ['p', 'Protein'], ['c', 'Carbs'], ['f', 'Fat']].map(([k, l]) => '<div><label class="f" for="ov-' + k + '">' + l + '</label><input id="ov-' + k + '" type="number" inputmode="decimal" data-ov="' + k + '" value="' + esc(o[k] ?? '') + '" placeholder="' + (T.calc ? T.calc[k] : '') + '"></div>').join('') + '</div>' +
+    (T.ready ? '<p style="margin:12px 0 0"><b>In use:</b> ' + fmt(T.kcal) + ' kcal, P ' + fmt(T.p) + ' g, C ' + fmt(T.c) + ' g, F ' + fmt(T.f) + ' g</p>' : '') + '</section>';
+  const lb = S.lastBackup ? Math.floor((Date.now() - S.lastBackup) / 864e5) : null;
+  h += '<section class="card"><h2>Backup</h2><p class="small">Your log lives only in this phone’s Chrome. Clearing Chrome’s data or changing phones erases it unless you have a backup file. ' +
+    (lb == null ? '<b>No backup yet.</b>' : 'Last backup: <b>' + (lb === 0 ? 'today' : lb + ' day' + (lb === 1 ? '' : 's') + ' ago') + '</b>.' + (lb >= 7 ? ' <b style="color:var(--warn)">Time for a new one.</b>' : '')) + '</p>' +
+    '<div class="row"><button class="btn" data-act="backup">Download backup</button><button class="btn quiet" data-act="restore">Restore from backup</button></div>' +
+    '<input type="file" id="restorefile" accept=".json,application/json" hidden>' +
+    '<p class="small muted" style="margin-top:10px">Save the backup file somewhere safe, like Google Drive or WhatsApp to yourself.</p></section>' +
+    '<section class="card"><h2>Excel</h2><p class="small muted">Download every day as a CSV with the same columns as your Excel sheet.</p><button class="btn quiet" data-act="export">Download CSV</button></section>' +
+    (S.msg && S.tab === 'me' ? '<div class="notice ' + (S.msg.err ? 'err' : '') + '" role="status">' + esc(S.msg.t) + '</div>' : '');
+  return h;
+}
+function rateHtml(ws) {
+  if (ws.length < 2) return '<p class="small muted">Lean bulk aim: about +0.5 to +1% of body weight a month. Log your weight once or twice a week to track it.</p>';
+  const newest = ws[0];
+  const old = ws.find(e => (parseYmd(newest.d) - parseYmd(e.d)) / 864e5 >= 14);
+  if (!old) return '<p class="small muted">Keep logging; the monthly trend appears after 2 weeks of entries.</p>';
+  const days = (parseYmd(newest.d) - parseYmd(old.d)) / 864e5;
+  const perMonth = (newest.kg - old.kg) / days * 30;
+  const lo = newest.kg * 0.005, hi = newest.kg * 0.01;
+  let adv = perMonth > hi ? 'Faster than a lean bulk. Consider about 100–150 kcal less a day.' : perMonth < lo ? 'Slower than a lean bulk. If this holds for 3–4 weeks, add about 100–150 kcal a day.' : 'On track for a lean bulk.';
+  return '<p class="small">Trend: <b>' + (perMonth >= 0 ? '+' : '') + fmt1(perMonth) + ' kg a month</b> since ' + esc(niceDate(old.d)) + '. Aim: +' + fmt1(lo) + ' to +' + fmt1(hi) + ' kg. ' + adv + '</p>';
+}
+
+/* ---------------- export ---------------- */
+function csvCell(v) { const s = v == null ? '' : String(v); return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
+function buildCsv() {
+  const wmap = {}; for (const e of S.profile.weights || []) wmap[e.d] = e.kg;
+  const rows = [['Date','Day','Imp','Counting','Food Intake','Description','Calories','Protein','Carbs','Fats','Split','Workout','Weight','C']];
+  const days = allDays().slice().reverse();
+  for (const [d, v] of days) {
+    const t = dayTotals(v);
+    const desc = (v.items || []).map(it => { const m = itemMac(it); return it.name + ' ' + it.qty + ' ' + unitText(it.unit, it.qty) + ': P ' + fmt1(m.p) + ', C ' + fmt1(m.c) + ', F ' + fmt1(m.f) + ', ' + fmt(m.kcal) + ' kcal'; }).join(' | ');
+    rows.push([d, DOW[parseYmd(d).getDay()], v.imp === 2 ? 'Y2' : v.imp === 1 ? 'Y' : '', v.count ?? '', v.food || '', desc,
+      t ? Math.round(t.kcal) : '', t ? r1(t.p) : '', t ? r1(t.c) : '', t ? r1(t.f) : '', v.split || '', v.workout || '', wmap[d] ?? '', v.c === 2 ? 'Yes 2' : v.c === 1 ? 'Yes' : '']);
+  }
+  return '\ufeff' + rows.map(r => r.map(csvCell).join(',')).join('\r\n');
+}
+
+/* ---------------- events ---------------- */
+function ask(msg, opt) {
+  opt = opt || {};
+  return new Promise(res => {
+    const w = document.createElement('div'); w.className = 'modal';
+    w.innerHTML = '<div class="mbox" role="dialog" aria-modal="true"><p>' + esc(msg) + '</p>' + (opt.input != null ? '<input type="text" id="mdl-in" value="' + esc(opt.input) + '">' : '') +
+      '<div class="row" style="justify-content:flex-end;margin-top:12px"><button class="btn quiet" data-m="0">' + esc(opt.cancel || 'Cancel') + '</button><button class="btn ' + (opt.danger ? 'dangerfill' : '') + '" data-m="1">' + esc(opt.ok || 'OK') + '</button></div></div>';
+    document.body.appendChild(w);
+    const inp = w.querySelector('#mdl-in');
+    (inp || w.querySelector('[data-m="1"]')).focus();
+    w.addEventListener('click', e => {
+      const m = e.target.closest('[data-m]'); e.stopPropagation(); if (!m) return;
+      const v = m.dataset.m === '1' ? (inp ? (inp.value.trim() || false) : true) : false;
+      w.remove(); res(v);
+    });
+  });
+}
+async function confirmLeave() { return !S.dirty || await ask('You have unsaved changes for ' + longDate(S.date) + '. Discard them?', {ok:'Discard', cancel:'Keep editing', danger:true}); }
+async function goDate(d) { if (d === S.date) return; if (!(await confirmLeave())) { render(); return; } S.date = d; openDraft(d); render(); }
+
+document.addEventListener('click', async ev => {
+  const tb = ev.target.closest('[data-tab]');
+  if (tb) { const ae0 = document.activeElement; if (ae0 && ae0.closest && ae0.closest('#view') && /^(INPUT|TEXTAREA|SELECT)$/.test(ae0.tagName)) ae0.blur(); }
+  if (tb) {
+    if (S.tab === 'log' && tb.dataset.tab !== 'log' && S.dirty) { if (!(await confirmLeave())) return; openDraft(S.date); }
+    S.tab = tb.dataset.tab; S.msg = null; S.foodEdit = null;
+    if (S.tab === 'log' && !S.draft) openDraft(S.date);
+    render(); window.scrollTo(0, 0); return;
+  }
+  const b = ev.target.closest('[data-act]');
+  if (!b || b.tagName === 'INPUT') return;
+  const ae = document.activeElement;
+  if (ae && ae !== b && ae.closest && ae.closest('#view') && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) ae.blur();
+  const act = b.dataset.act, d = S.draft;
+  switch (act) {
+    case 'prev': goDate(addDays(S.date, -1)); break;
+    case 'next': goDate(addDays(S.date, 1)); break;
+    case 'today': goDate(todayStr()); break;
+    case 'calc': {
+      const t = S.meal.trim();
+      if (!t) { S.msg = {err:true, t:'Type what you ate first.'}; render(); break; }
+      runParse(t, false); break;
+    }
+    case 'calcday': runParse(d.food, true); break;
+    case 'toggleadd': S.addOpen = !S.addOpen; render(); if (S.addOpen) { const i = document.querySelector('[data-in=addq]'); if (i) i.focus(); } break;
+    case 'addfood': {
+      const f = S.foods.find(x => x.id === b.dataset.id); const inp = document.getElementById('aq-' + b.dataset.id);
+      const q = num(inp && inp.value);
+      if (!f || q == null || q <= 0) { S.msg = {err:true, t:'Enter an amount above zero.'}; render(); break; }
+      d.items.push({kind:'lib', foodId:f.id, name:f.name, qty:r1(q), unit:f.unit, base:{per:f.per, p:f.p, c:f.c, f:f.f, kcal:f.kcal ?? null}, text:'', note:''});
+      S.msg = null; S.dirty = true; render(); break;
+    }
+    case 'addcustom':
+      d.items.push({kind:'est', foodId:null, name:'Custom food', qty:1, unit:'piece', base:{per:1, p:0, c:0, f:0, kcal:null}, text:'', note:'Enter the name in “What you ate” and the macros here.', bad:true});
+      S.dirty = true; S.addOpen = false; render(); break;
+    case 'rm': d.items.splice(Number(b.dataset.i), 1); S.dirty = true; render(); break;
+    case 'savefood': {
+      const it = d.items[Number(b.dataset.i)]; if (!it) break;
+      if (it.bad) break;
+      const name = await ask('Save to your foods, with these macros for ' + it.qty + ' ' + unitText(it.unit, it.qty) + '. Name it the way you write it in your log:', {input:it.name, ok:'Save food'}); if (!name) break;
+      const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30) + '-' + Math.random().toString(36).slice(2, 6);
+      const unit = UNITS.includes(it.unit) ? it.unit : 'piece';
+      const al = [name.trim().toLowerCase()]; if (it.key && !al.includes(it.key)) al.push(it.key);
+      const nf = {id, name:name.trim(), aliases:al, unit, per:it.qty, p:r1(it.base.p * it.qty / it.base.per), c:r1(it.base.c * it.qty / it.base.per), f:r1(it.base.f * it.qty / it.base.per), kcal:null, src:'estimate', verify:false, note:'Saved from an estimate on ' + S.date + '.'};
+      S.foods.push(nf);
+      Object.assign(it, {kind:'lib', foodId:id, name:nf.name, unit, base:{per:nf.per, p:nf.p, c:nf.c, f:nf.f, kcal:null}, bad:false, note:''});
+      // fill any other unmatched mentions of the same food in this day
+      d.items.forEach(o => { if (o !== it && o.kind === 'est' && o.bad && o.key && al.includes(o.key) && o.unit === unit) Object.assign(o, {kind:'lib', foodId:id, name:nf.name, base:{per:nf.per, p:nf.p, c:nf.c, f:nf.f, kcal:null}, bad:false, note:''}); });
+      S.dirty = true;
+      try { await writeDoc('foods', {items:S.foods}); S.msg = {err:false, t:nf.name + ' saved to your foods.'}; } catch (e) { S.msg = {err:true, t:storeErr(e)}; }
+      render();
+      break;
+    }
+    case 'seg': d[b.dataset.k] = Number(b.dataset.v); S.dirty = true; render(); break;
+    case 'save': {
+      if (d.items.some(i => i.bad)) { S.msg = {err:true, t:'Some items have no macros. Fill them in or remove them, then save.'}; render(); break; }
+      const day = {food:(d.food || '').trim(), items:d.items, split:(d.split || '').trim(), workout:(d.workout || '').trim(), count:d.count ?? null, imp:d.imp || 0, c:d.c || 0, updated:Date.now()};
+      if (d.items.length) { const t = sumItems(d.items); day.tot = {kcal:Math.round(t.kcal), p:r1(t.p), c:r1(t.c), f:r1(t.f)}; day.src = 'app'; }
+      else if (d.tot) { day.tot = d.tot; day.src = d.src || 'imported'; }
+      else day.src = 'app';
+      const mid = monthId(S.date);
+      const days = Object.assign({}, clone(S.months[mid] || {}));
+      days[S.date] = day;
+      S.saving = true; render();
+      try { await writeDoc(mid, {month:S.date.slice(0, 7), days}); S.months[mid] = days; S.dirty = false; openDraft(S.date); S.msg = {err:false, t:'Saved ' + longDate(S.date) + '.'}; }
+      catch (e) { S.msg = {err:true, t:storeErr(e)}; }
+      S.saving = false; render(); break;
+    }
+    case 'discard': openDraft(S.date); render(); break;
+    case 'delday': {
+      if (!(await ask('Delete everything logged on ' + longDate(S.date) + '?', {ok:'Delete day', danger:true}))) break;
+      const mid = monthId(S.date); const days = clone(S.months[mid] || {}); delete days[S.date];
+      try { await writeDoc(mid, {month:S.date.slice(0, 7), days}); S.months[mid] = days; openDraft(S.date); S.msg = {err:false, t:'Deleted.'}; }
+      catch (e) { S.msg = {err:true, t:storeErr(e)}; }
+      render(); break;
+    }
+    case 'hf': S.histFilter = b.dataset.v; S.histN = 60; render(); break;
+    case 'more': S.histN += 60; render(); break;
+    case 'openday': S.date = b.dataset.d; openDraft(S.date); S.tab = 'log'; render(); window.scrollTo(0, 0); break;
+    case 'newfood': S.foodEdit = {id:'f-' + Math.random().toString(36).slice(2, 9), name:'', aliases:[], unit:'g', per:100, p:'', c:'', f:'', kcal:null, src:'label', verify:false, note:''}; S.msg = null; render(); break;
+    case 'editfood': S.foodEdit = clone(S.foods.find(x => x.id === b.dataset.id)); S.msg = null; render(); window.scrollTo(0, 0); break;
+    case 'cancelfood': S.foodEdit = null; S.msg = null; render(); break;
+    case 'savefoodform': {
+      const f = S.foodEdit;
+      const per = num(f.per), p = num(f.p), c = num(f.c), fa = num(f.f), k = num(f.kcal);
+      if (!String(f.name || '').trim()) { S.msg = {err:true, t:'Give the food a name.'}; render(); break; }
+      if (per == null || per <= 0 || p == null || c == null || fa == null || p < 0 || c < 0 || fa < 0) { S.msg = {err:true, t:'Enter the amount and protein, carbs and fat as numbers (0 is fine).'}; render(); break; }
+      const pg = f.pieceG && (f.unit === 'g' || f.unit === 'ml') ? f.pieceG : null;
+      const pieceOk = pg && num(pg.small) && num(pg.medium) && num(pg.big);
+      if (pg && (num(pg.small) || num(pg.medium) || num(pg.big)) && !pieceOk) { S.msg = {err:true, t:'Fill all three piece weights, or leave all three blank.'}; render(); break; }
+      const clean = {id:f.id, name:f.name.trim(), aliases:(Array.isArray(f.aliases) ? f.aliases : String(f.aliases || '').split(',')).map(a => a.trim().toLowerCase()).filter(Boolean),
+        unit:f.unit, per, p, c, f:fa, kcal:k, src:f.src || 'label', verify:!!f.verify, note:f.note || ''};
+      if (pieceOk) clean.pieceG = {small:num(pg.small), medium:num(pg.medium), big:num(pg.big)};
+      if (clean.unit !== 'g' && clean.unit !== 'ml' && num(f.g) > 0) clean.g = num(f.g);
+      const next = S.foods.slice(); const i = next.findIndex(x => x.id === clean.id);
+      if (i >= 0) next[i] = clean; else next.push(clean);
+      try { await writeDoc('foods', {items:next}); S.foods = next; S.foodsFromDb = true; S.foodEdit = null; S.msg = null; }
+      catch (e) { S.msg = {err:true, t:storeErr(e)}; }
+      render(); break;
+    }
+    case 'delfood': {
+      if (!(await ask('Delete ' + S.foodEdit.name + ' from your foods? Saved days are not affected.', {ok:'Delete food', danger:true}))) break;
+      const next = S.foods.filter(x => x.id !== S.foodEdit.id);
+      try { await writeDoc('foods', {items:next}); S.foods = next; S.foodEdit = null; }
+      catch (e) { S.msg = {err:true, t:storeErr(e)}; }
+      render(); break;
+    }
+    case 'addweight': {
+      const dd = document.getElementById('wd').value, kg = num(document.getElementById('wkg').value);
+      if (!dd || kg == null || kg < 20 || kg > 300) { S.msg = {err:true, t:'Enter a date and a weight in kg.'}; render(); break; }
+      const p = clone(S.profile); p.weights = (p.weights || []).filter(e => e.d !== dd); p.weights.push({d:dd, kg:r1(kg)});
+      await saveProfile(p); break;
+    }
+    case 'delweight': {
+      const p = clone(S.profile); p.weights = (p.weights || []).filter(e => e.d !== b.dataset.d); await saveProfile(p); break;
+    }
+    case 'export': {
+      download('macro-log-' + todayStr() + '.csv', buildCsv(), 'text/csv'); S.msg = {err:false, t:'CSV downloaded.'}; render(); break;
+    }
+    case 'backup': {
+      S.lastBackup = Date.now();
+      const data = {app:'macro-log', version:1, exported:new Date().toISOString(), months:S.months, profile:S.profile, foods:S.foods};
+      download('macro-log-backup-' + todayStr() + '.json', JSON.stringify(data), 'application/json');
+      try { persist(); } catch (e) {}
+      S.msg = {err:false, t:'Backup downloaded. Keep the file somewhere safe.'}; render(); break;
+    }
+    case 'restore': {
+      const inp = document.getElementById('restorefile'); if (inp) { inp.value = ''; inp.click(); } break;
+    }
+  }
+});
+function download(name, text, type) {
+  const url = URL.createObjectURL(new Blob([text], {type}));
+  const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 1500);
+}
+async function restoreFile(file) {
+  let data;
+  try { data = JSON.parse(await file.text()); } catch (e) { S.msg = {err:true, t:'That file isn’t a Macro Log backup.'}; render(); return; }
+  if (!data || data.app !== 'macro-log' || typeof data.months !== 'object') { S.msg = {err:true, t:'That file isn’t a Macro Log backup.'}; render(); return; }
+  const n = Object.values(data.months).reduce((a, m) => a + Object.keys(m || {}).length, 0);
+  const have = Object.values(S.months).reduce((a, m) => a + Object.keys(m || {}).length, 0);
+  const ok = await ask('This backup has ' + n + ' days. ' + (have ? 'It replaces the ' + have + ' days on this phone.' : '') + ' Restore it?', {ok:'Restore', danger:have > 0});
+  if (!ok) return;
+  const prev = {months:S.months, profile:S.profile, foods:S.foods};
+  S.months = clone(data.months);
+  if (data.profile) S.profile = Object.assign(clone(DEFAULT_PROFILE), data.profile);
+  if (Array.isArray(data.foods)) { S.foods = clone(data.foods); S.foodsFromDb = true; }
+  try { persist(); S.msg = {err:false, t:'Restored ' + n + ' days.'}; openDraft(S.date, true); }
+  catch (e) { S.months = prev.months; S.profile = prev.profile; S.foods = prev.foods; S.msg = {err:true, t:storeErr(e)}; }
+  render();
+}
+async function saveProfile(p) {
+  try { await writeDoc('profile', p); S.profile = p; S.msg = null; }
+  catch (e) { S.msg = {err:true, t:storeErr(e)}; }
+  render();
+}
+document.addEventListener('input', ev => {
+  const t = ev.target, d = S.draft;
+  const k = t.dataset.in;
+  if (k === 'meal') S.meal = t.value;
+  else if (k === 'split') { d.split = t.value; markDirty(); const lt = document.getElementById('lasttime'); if (lt) lt.innerHTML = lastTimeHtml(); }
+  else if (k === 'workout') { d.workout = t.value; markDirty(); }
+  else if (k === 'count') { d.count = num(t.value); markDirty(); }
+  else if (k === 'addq') { S.addQ = t.value; const r = document.getElementById('addres'); if (r) r.innerHTML = addResults(); }
+  else if (k === 'wq') { S.wq = t.value; const r = document.getElementById('wres'); if (r) r.innerHTML = workoutResults(); }
+  else if (k === 'foodq') { S.foodQ = t.value; }
+  else if (t.dataset.ff && S.foodEdit) {
+    const f = S.foodEdit, key = t.dataset.ff;
+    if (key === 'verify') f.verify = t.checked;
+    else if (key.startsWith('pg-')) { f.pieceG = f.pieceG || {}; f.pieceG[key.slice(3)] = t.value; }
+    else if (key === 'aliases') f.aliases = t.value;
+    else if (key === 'g') f.g = t.value;
+    else f[key] = t.value;
+  }
+});
+document.addEventListener('change', async ev => {
+  const t = ev.target;
+  if (t.id === 'restorefile') { if (t.files && t.files[0]) restoreFile(t.files[0]); return; }
+  if (t.dataset.act === 'pickdate') { if (t.value) { t.blur(); goDate(t.value); } return; }
+  if (t.dataset.ch === 'qty') {
+    const it = S.draft.items[Number(t.dataset.i)], q = num(t.value);
+    if (it && q != null && q > 0) {
+      if (it.kind === 'est') it.base = {per:q, p:r1(it.base.p * q / it.base.per), c:r1(it.base.c * q / it.base.per), f:r1(it.base.f * q / it.base.per), kcal:null};
+      it.qty = r1(q); S.dirty = true;
+    }
+    t.blur(); render(); return;
+  }
+  if (t.dataset.ch === 'mac') {
+    const it = S.draft.items[Number(t.dataset.i)], v = num(t.value);
+    if (it && v != null && v >= 0) {
+      const m = itemMac(it); m[t.dataset.k] = v;
+      it.base = {per:it.qty, p:r1(m.p), c:r1(m.c), f:r1(m.f), kcal:null};
+      if (it.bad && (it.base.p + it.base.c + it.base.f) > 0) it.bad = false;
+      S.dirty = true;
+    }
+    t.blur(); render(); return;
+  }
+  if (t.dataset.ff === 'unit' && S.foodEdit) { S.foodEdit.unit = t.value; render(); return; }
+  if (t.dataset.pf) {
+    const p = clone(S.profile), key = t.dataset.pf;
+    if (key === 'sex') p.sex = t.value;
+    else { const v = num(t.value); if (t.value !== '' && v == null) return; p[key] = v; }
+    t.blur(); await saveProfile(p); return;
+  }
+  if (t.dataset.ov) {
+    const p = clone(S.profile); p.override = Object.assign({}, p.override || {});
+    p.override[t.dataset.ov] = t.value === '' ? null : num(t.value);
+    t.blur(); await saveProfile(p); return;
+  }
+  if (t.dataset.in === 'foodq') { t.blur(); render(); }
+});
+document.addEventListener('focusout', () => { setTimeout(() => { if (S.pendingRender) render(); }, 0); });
+window.addEventListener('beforeunload', e => { if (S.dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+/* ---------------- start ---------------- */
+function init() {
+  let raw = null;
+  try { localStorage.setItem('macrolog.test', '1'); localStorage.removeItem('macrolog.test'); raw = localStorage.getItem(STORE_KEY); }
+  catch (e) { S.noStore = true; render(); return; }
+  if (raw) {
+    try {
+      const d = JSON.parse(raw);
+      S.months = d.months || {};
+      S.profile = Object.assign(clone(DEFAULT_PROFILE), d.profile || {});
+      S.profile.override = Object.assign({kcal:null, p:null, c:null, f:null}, (d.profile && d.profile.override) || {});
+      if (Array.isArray(d.foods) && d.foodsFromDb) { S.foods = d.foods; S.foodsFromDb = true; }
+      S.lastBackup = d.lastBackup || null;
+    } catch (e) { S.msg = {err:true, t:'Saved data couldn’t be read. Restore your last backup under Me.'}; }
+  }
+  if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+  S.loaded = true;
+  openDraft(S.date, true);
+  render();
+}
+init();
+</script>
+</body>
+</html>
